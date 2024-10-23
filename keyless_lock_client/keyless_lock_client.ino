@@ -31,7 +31,7 @@ static BLEAdvertisedDevice* myDevice;
 BLERemoteCharacteristic* pRemoteChar;
 
 // Callback function that is called whenever a client is connected or disconnected
-class MyClientCallback : public BLEClientCallbacks {                                                              //(8)    我猜這個在內部程式會call 判斷並進入是哪個狀態 總之內部他會自己判斷
+class MyClientCallback : public BLEClientCallbacks {                                                              //(8)    這個在內部程式會call 判斷並進入是哪個狀態 內部他會自己判斷
   void onConnect(BLEClient* pclient) {
   }
 
@@ -133,7 +133,7 @@ void setup() {
   pBLEScan->setWindow(449);
   pBLEScan->setActiveScan(true);
   pBLEScan->start(5, false);
-  pinMode(ledPin, OUTPUT); // 设置GPIO pin為输出模式
+  pinMode(ledPin, OUTPUT); 
 } // End of setup.
 
 void loop() {
